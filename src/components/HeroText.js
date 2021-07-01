@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import Button from "./Button";
+
 const HeroText = () => {
   return (
     <Container>
@@ -11,7 +13,7 @@ const HeroText = () => {
       <h1>And more...</h1>
       <BtnContainer>
         <Link to="/order">
-          <button>Order yours now!</button>
+          <Button>Order yours now!</Button>
         </Link>
       </BtnContainer>
     </Container>

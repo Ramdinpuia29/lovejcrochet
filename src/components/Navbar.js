@@ -1,15 +1,22 @@
-import { ReactComponent as LogoIcon } from "../assets/Logoxs.svg";
 import { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import Logo from "./Logo";
+import Button from "./Button";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const closeMenu = () => {
+    if (isOpen) setIsOpen(false);
+  };
+
   return (
     <Nav>
       <Container>
-        <Link to="/">
-          <LogoIcon />
+        <Link to="/" onClick={closeMenu}>
+          <Logo />
         </Link>
         <Hamburger onClick={() => setIsOpen(!isOpen)}>
           <span></span>
@@ -73,25 +80,24 @@ const Menu = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  /* position: relative; */
 
   @media (max-width: 768px) {
     flex-direction: column;
     overflow: hidden;
     border-radius: 1rem;
-    margin-top: 1rem;
-    box-shadow: -4px 8px 15px 1 rgba(0, 0, 0, 0.07);
+    margin-top: 0.5rem;
+    box-shadow: -4px 8px 15px 1 rgba(0, 0, 0, 0.1);
     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
     width: 100%;
     transition: max-height 0.3s ease-in-out;
-    background-color: rgba(255, 255, 255, 0.9);
-
+    background-color: rgba(255, 255, 255, 1);
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       --webkit-backdrop-filter: blur(35px);
       backdrop-filter: blur(15px);
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.5);
     }
-  } ;
+  }
 `;
 
 const LinkWrapper = styled.div`
@@ -123,29 +129,6 @@ const MenuLink = styled(Link)`
     color: #00b3f9;
     background: #e0f6fe;
     text-decoration: none;
-  }
-`;
-
-const Button = styled.button`
-  font-size: 0.8rem;
-  background: #00bef9;
-  border: none;
-  padding: 0.8rem 1.1rem;
-  color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0px 13px 24px -7px #6cadb8;
-  transition: all 0.2s ease-in;
-  margin-left: 0.5rem;
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0px 17px 16px -11px #6cadb8;
-    transform: translateY(-5px);
-  }
-
-  @media (max-width: 768px) {
-    margin: 0;
-    margin-top: 0.5rem;
   }
 `;
 
