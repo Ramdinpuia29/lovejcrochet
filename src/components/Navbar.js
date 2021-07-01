@@ -18,9 +18,13 @@ const Navbar = () => {
         </Hamburger>
         <Menu isOpen={isOpen}>
           <LinkWrapper>
-            <MenuLink to="/products">Products</MenuLink>
-            <MenuLink to="/myorders">My Orders</MenuLink>
-            <Link to="/signin">
+            <MenuLink to="/products" onClick={() => setIsOpen(!isOpen)}>
+              Products
+            </MenuLink>
+            <MenuLink to="/myorders" onClick={() => setIsOpen(!isOpen)}>
+              My Orders
+            </MenuLink>
+            <Link to="/signin" onClick={() => setIsOpen(!isOpen)}>
               <Button>Sign In</Button>
             </Link>
           </LinkWrapper>
@@ -85,7 +89,7 @@ const Menu = styled.div`
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       --webkit-backdrop-filter: blur(35px);
       backdrop-filter: blur(15px);
-      background-color: rgba(255, 255, 255, 0.4);
+      background-color: rgba(0, 0, 0, 0.1);
     }
   } ;
 `;
@@ -110,6 +114,10 @@ const MenuLink = styled(Link)`
   transition: all 0.2s ease-in;
   border-radius: 0.5rem;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    color: #000;
+  }
 
   &:hover {
     color: #00b3f9;
