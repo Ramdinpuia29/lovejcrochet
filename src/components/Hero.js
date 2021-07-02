@@ -40,6 +40,7 @@ const CarouselWrapper = styled.div`
   width: 60%;
   min-width: 400px;
   border-radius: 2rem;
+  overflow: hidden;
 
   img {
     height: 400px;

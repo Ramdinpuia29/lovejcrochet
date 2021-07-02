@@ -91,7 +91,7 @@ const Menu = styled.div`
     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
     width: 100%;
     transition: max-height 0.3s ease-in-out;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.9);
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       --webkit-backdrop-filter: blur(35px);
       backdrop-filter: blur(15px);
