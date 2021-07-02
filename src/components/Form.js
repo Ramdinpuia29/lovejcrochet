@@ -38,9 +38,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 100vw;
-  position: fixed;
-  inset: 0;
-  margin: auto;
 `;
 
 const Wrapper = styled.div`
