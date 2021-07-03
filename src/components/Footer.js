@@ -18,7 +18,7 @@ const Footer = () => {
 export default Footer;
 
 const Container = styled.footer`
-  position: fixed;
+  position: static;
   bottom: 0;
   left: 0;
   right: 0;
