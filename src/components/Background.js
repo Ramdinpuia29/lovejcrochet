@@ -24,7 +24,9 @@ export const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-around;
   background-color: rgba(255, 255, 255, 0.9);
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     --webkit-backdrop-filter: blur(35px);
