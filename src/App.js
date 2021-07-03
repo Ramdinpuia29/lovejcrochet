@@ -1,6 +1,5 @@
 import { Route, Switch } from "react-router-dom";
 import Background from "./components/Background";
-import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
@@ -24,7 +23,6 @@ const App = () => {
         <Route path="/signup" exact component={Signup} />
         <Route component={NotFound} />
       </Switch>
-      <Footer />
     </Background>
   );
 };
